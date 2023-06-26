@@ -16,3 +16,4 @@ create table customers (
            fk_cust_id INT NOT NULL,
            FOREIGN KEY (fk_cust_id) REFERENCES customers(id)
 	  );
+      
