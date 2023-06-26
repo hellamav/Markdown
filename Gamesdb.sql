@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS products(
     PRIMARY KEY (product_id)
     );
     
-CREATE TABLE orders(
+CREATE TABLE IF NOT EXISTS orders(
    order_id INT NOT NULL AUTO_INCREMENT,
    customer_id INT NOT NULL,
    product_id INT NOT NULL,
@@ -27,5 +27,15 @@ CREATE TABLE orders(
    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
    FOREIGN KEY (product_id) REFERENCES products(product_id)
     );
+
+INSERT INTO customers(name, email, house_number, post_code)
+VALUES ('Hella', 'ogobenehella@gmail.com', '757', 'B16 8FT');
+
+INSERT INTO products(title, price, stock)
+VALUES('sistar Hero', 42.99, 35);
+
+INSERT INTO orders(customer_id, product_id, date_placed)
+VALUES(1, 1, '2023-06-26');
+
 
 
